@@ -2,7 +2,11 @@
 
 ## Setup Instructions:
 
-1. (Optional) Setup environment
+1. Clone the repo via
+```
+git clone https://github.com/aLyonsGH/ConductorAI-TakeHome.git
+```
+2. (Optional) Setup environment
 
     a. Create a new environment using Anaconda via 
     ```
@@ -12,7 +16,7 @@
     ```
     conda activate ConductorAI
     ```
-2. Install dependencies via 
+3. Install dependencies via 
 ```
 pip install pymupdf argparse tqdm
 ```
