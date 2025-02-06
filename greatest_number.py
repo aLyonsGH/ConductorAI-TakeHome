@@ -46,11 +46,11 @@ def greatest_number_in_page(page_text):
 
 #Find the greatest number in a PDF
 def greatest_number_in_pdf(pdf):
-    greatest_number = -1000000000000
+    greatest_number = None
     for page in tqdm(pdf):
         text = page.get_text()
         candidate = greatest_number_in_page(text)
-        if candidate > greatest_number:
+        if greatest_number is None or candidate > greatest_number:
             greatest_number = candidate
     return greatest_number
 
@@ -60,4 +60,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     pdf = pymupdf.open(args.pdf)
     greatest_number = greatest_number_in_pdf(pdf)
-    print(f"The greatest number is {float(greatest_number)}")
+    if greatest_number is None:
+        print("No number found")
+    else:
+        print(f"The greatest number is {float(greatest_number)}")
