@@ -5,7 +5,7 @@
 1. Clone the repo and enter it via
 ```
 git clone https://github.com/aLyonsGH/ConductorAI-TakeHome.git
-cd ConductorAI
+cd ConductorAI-TakeHome
 ```
 2. (Optional) Setup environment
 
