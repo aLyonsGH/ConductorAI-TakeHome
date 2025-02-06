@@ -25,12 +25,12 @@ def to_number(word):
 
 #Find the greatest number in a page
 def greatest_number_in_page(page_text):
-    greatest_number = 0
+    greatest_number = None
     for i, word in enumerate(page_text.split()):
         number = to_number(word)
         if number is not None:
             #Check if the word is a number
-            if number > greatest_number:
+            if greatest_number is None or number > greatest_number:
                 greatest_number = number
         elif word.lower() in number_words and i > 0:
             #Check if the word represents a number (ex. "million")
@@ -40,7 +40,7 @@ def greatest_number_in_page(page_text):
             if prev_number is not None:
                 # Merge the previous number with the number word (ex. "5 hundred" -> 500)
                 number *= prev_number
-                if number > greatest_number:
+                if greatest_number is None or number > greatest_number:
                     greatest_number = number
     return greatest_number
 
@@ -50,8 +50,9 @@ def greatest_number_in_pdf(pdf):
     for page in tqdm(pdf):
         text = page.get_text()
         candidate = greatest_number_in_page(text)
-        if greatest_number is None or candidate > greatest_number:
-            greatest_number = candidate
+        if candidate is not None:
+            if greatest_number is None or candidate > greatest_number:
+                greatest_number = candidate
     return greatest_number
 
 if __name__ == "__main__":
