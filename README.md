@@ -2,9 +2,10 @@
 
 ## Setup Instructions:
 
-1. Clone the repo via
+1. Clone the repo and enter it via
 ```
 git clone https://github.com/aLyonsGH/ConductorAI-TakeHome.git
+cd ConductorAI
 ```
 2. (Optional) Setup environment
 
