@@ -10,7 +10,7 @@ git clone https://github.com/aLyonsGH/ConductorAI-TakeHome.git
 
     a. Create a new environment using Anaconda via 
     ```
-    conda create -n "ConductorAI" python=3.12
+    conda create -n "ConductorAI" python=3.12 pip
     ```
     b. Activate the environment via
     ```
